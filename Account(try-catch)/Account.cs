@@ -1,19 +1,16 @@
-﻿using AccountTryCatch.SuccessorsOfExceptions;
+﻿using AccountTryCatch;
+using AccountTryCatch.SuccessorsOfExceptions;
 
-namespace AccountTryCatch
+namespace Account_try_catch_
 {
     public class Account
     {
-        private readonly bool _correctAccount;
-
-        public bool CorrectAccount => _correctAccount;
-
-        public Account(string login, string password, string confirmPassword)
+        public Account()
         {
-            _correctAccount = IsAccountDate(login, password, confirmPassword);
+
         }
 
-        private static bool IsAccountDate(string login, string password, string confirmPassword)
+        public static bool IsAccountDate(string login, string password, string confirmPassword)
         {
             try
             {

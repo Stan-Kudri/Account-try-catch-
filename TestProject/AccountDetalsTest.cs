@@ -1,4 +1,4 @@
-using AccountTryCatch;
+using Account_try_catch_;
 using Xunit;
 
 namespace TestProject
@@ -10,8 +10,8 @@ namespace TestProject
         [InlineData("sergey", "987456321")]
         public void Entering_the_correct_password_and_login(string login, string password)
         {
-            var numberAccount = new Account(login, password, password);
-            Assert.True(numberAccount.CorrectAccount);
+            var account = Account.IsAccountDate(login, password, password);
+            Assert.True(account);
         }
 
         [Theory]
@@ -21,8 +21,8 @@ namespace TestProject
         [InlineData("sergeyddddddddddddddddddddddddddddddddddddd", "987456321", "987456321")]
         public void Failed_the_correct_password_or_login(string login, string password, string confirmPassword)
         {
-            var numberAccount = new Account(login, password, confirmPassword);
-            Assert.False(numberAccount.CorrectAccount);
+            var account = Account.IsAccountDate(login, password, confirmPassword);
+            Assert.False(account);
         }
     }
 }
